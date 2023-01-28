@@ -2,6 +2,27 @@ name: Apply Terraform
 
 on:
   workflow_call:
+    secrets:
+      gh_token:
+        required: true
+      machine_ip:
+        required: false
+      vault_token:
+        required: false
+      mongo_user:
+        required: false
+      mongo_pass:
+        required: false
+      meili_key:
+        required: false
+      influx_user:
+        required: false
+      influx_pass:
+        required: false
+      rabbit_user:
+        required: false
+      rabbit_pass:
+        required: false
 
 jobs:
   apply:
