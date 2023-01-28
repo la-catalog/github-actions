@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           enable-pep582: true
-          cache: true
+          cache: false
         
       - name: Update pyproject.toml version
         run: |
