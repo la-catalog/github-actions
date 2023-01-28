@@ -27,6 +27,7 @@ jobs:
         run: |
           pdm install
           pdm self add pdm-version
+          pdm self list
           pdm version ${{ github.ref_name }}
 
       - name: Scan for secrets
