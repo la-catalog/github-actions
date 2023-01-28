@@ -2,6 +2,9 @@ name: Publish package
 
 on:
   workflow_call:
+    secrets:
+      gh_token:
+        required: true
 
 env:
   PYTHON_VERSION: "3.11.0"
