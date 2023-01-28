@@ -22,12 +22,11 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           enable-pep582: true
-          cache: false
         
       - name: Update pyproject.toml version
         run: |
           pdm install
-          pdm self add pdm-version
+          pdm self add pdm-version==2.0.0
           pdm self list
           pdm version ${{ github.ref_name }}
 
