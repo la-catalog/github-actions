@@ -26,7 +26,7 @@ jobs:
       - name: Update pyproject.toml version
         run: |
           pdm install
-          pdm plugin add pdm-version
+          pdm self add pdm-version
           pdm version ${{ github.ref_name }}
 
       - name: Scan for secrets
