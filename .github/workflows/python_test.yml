@@ -18,6 +18,7 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           enable-pep582: true
+          generate-install-output: false
 
       - name: Format and test code
         run: |
