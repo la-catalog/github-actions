@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Setup pdm
-        uses: pdm-project/setup-pdm@v3
+        uses: thiagola92/setup-pdm@main
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           enable-pep582: true
