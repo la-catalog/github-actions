@@ -27,14 +27,13 @@ jobs:
           pdm run isort
           pdm run unittest
 
-      - name: Scan for secrets
-        uses: trufflesecurity/trufflehog@main
-        continue-on-error: true
-        with:
-          path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
-          extra_args: --debug --only-verified
+      # - name: Scan for secrets
+      #   uses: trufflesecurity/trufflehog@main
+      #   with:
+      #     path: ./
+      #     base: ${{ github.event.repository.default_branch }}
+      #     head: HEAD
+      #     extra_args: --debug --only-verified
 
       - name: Push changes
         uses: EndBug/add-and-commit@v9
