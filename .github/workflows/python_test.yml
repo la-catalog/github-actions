@@ -22,7 +22,7 @@ jobs:
         run: |
           pdm install
           pdm run test
-          if [ $? -eq 5 ]; then echo "No tests found"; fi
+          pdm run format
 
       - name: Scan for secrets
         uses: trufflesecurity/trufflehog@main
