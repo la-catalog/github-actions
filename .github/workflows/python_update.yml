@@ -4,26 +4,25 @@ on:
   workflow_call:
 
 env:
-  PYTHON_VERSION: "3.11.0"
+  PYTHON_VERSION: "3.12.2"
 
 jobs:
   update:
     runs-on: self-hosted
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup pdm
-        uses: pdm-project/setup-pdm@v3
+        uses: pdm-project/setup-pdm@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-          enable-pep582: true
 
       - name: Update and test packages
         run: |
           pdm install
           pdm update --unconstrained --save-exact
-          pdm run unittest
+          pdm run test
 
       - name: Scan for secrets
         uses: trufflesecurity/trufflehog@main
