@@ -18,7 +18,7 @@ jobs:
       #   with:
       #     python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Format and test code
+      - name: Run tests
         run: |
           pdm install
           pdm run test
