@@ -20,10 +20,11 @@ jobs:
         with:
           ref: main
 
-      - name: Setup pdm
-        uses: pdm-project/setup-pdm@v4
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
+      # Disable in self-hosted, install PDM manually
+      # - name: Setup pdm
+      #   uses: pdm-project/setup-pdm@v4
+      #   with:
+      #     python-version: ${{ env.PYTHON_VERSION }}
         
       - name: Update pyproject.toml version
         run: |

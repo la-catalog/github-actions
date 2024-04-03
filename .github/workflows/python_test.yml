@@ -13,6 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Disable in self-hosted, install PDM manually
       # - name: Setup pdm
       #   uses: pdm-project/setup-pdm@v4
       #   with:
